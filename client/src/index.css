@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Strict Palette */
+  --alice-blue: #dcedff;
+  --powder-blue: #94b0da;
+  --lavender-grey: #8f91a2;
+  --charcoal: #505a5b;
+  --onyx: #121616;
+
+  /* Theme tokens - Light Mode */
+  --bg-primary: #f6f9fc;
+  --bg-surface: #ffffff;
+  --border-color: rgba(148, 176, 218, 0.35);
+  --text-primary: #121616;
+  --text-secondary: #505a5b;
+  --text-muted: #8f91a2;
+  --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+.dark {
+  /* Theme tokens - Dark Mode */
+  --bg-primary: #121616;
+  --bg-surface: #181d1e;
+  --border-color: rgba(80, 90, 91, 0.45);
+  --text-primary: #dcedff;
+  --text-secondary: #8f91a2;
+  --text-muted: #505a5b;
+  --card-bg: rgba(24, 29, 30, 0.85);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Strict Palette Gradients */
+.palette-grad-top {
+  background: linear-gradient(0deg, #dcedff, #94b0da, #8f91a2, #505a5b, #121616);
+}
+.palette-grad-right {
+  background: linear-gradient(90deg, #dcedff, #94b0da, #8f91a2, #505a5b, #121616);
+}
+.palette-grad-bottom {
+  background: linear-gradient(180deg, #dcedff, #94b0da, #8f91a2, #505a5b, #121616);
+}
+.palette-grad-left {
+  background: linear-gradient(270deg, #dcedff, #94b0da, #8f91a2, #505a5b, #121616);
+}
+.palette-grad-top-right {
+  background: linear-gradient(45deg, #dcedff, #94b0da, #8f91a2, #505a5b, #121616);
+}
+.palette-grad-bottom-right {
+  background: linear-gradient(135deg, #dcedff, #94b0da, #8f91a2, #505a5b, #121616);
+}
+.palette-text-gradient-dark {
+  background: linear-gradient(135deg, #ffffff 10%, #94b0da 60%, #dcedff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.palette-text-gradient-light {
+  background: linear-gradient(135deg, #121616 10%, #505a5b 60%, #94b0da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Aspen Modernist Dotted / Halftone Grid Background Pattern */
+.aspen-grid-bg {
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Glass-style Sticky Navbar */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(148, 176, 218, 0.3);
+}
+
+.dark .glass-nav {
+  background: rgba(18, 22, 22, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(80, 90, 91, 0.5);
+}
+
+/* Soft Rounded Aspen Cards */
+.aspen-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aspen-card:hover {
+  border-color: var(--powder-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(18, 22, 22, 0.1);
+}
+
+.dark .aspen-card:hover {
+  border-color: var(--powder-blue);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Healthcare Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lavender-grey);
+  border-radius: 9999px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--powder-blue);
+}
