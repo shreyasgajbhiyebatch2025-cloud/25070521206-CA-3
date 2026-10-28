@@ -9,7 +9,11 @@ Full-Stack Closed-Loop Inpatient Medication Administration & Patient Safety Plat
 └── server/   # Node.js + Express + MongoDB Resilient Engine
 ```
 
-## Quick Start
+## ⚡ 1-Click Launch (Windows)
+Simply double-click **`START_MED_SATHI.bat`**!
+It automatically starts both the backend API and frontend client, then opens `http://localhost:3000` in your browser.
+
+## Manual Quick Start
 ```bash
 # Terminal 1: Backend Server (Port 5000)
 cd 25070521206/server
@@ -23,3 +27,4 @@ npm run dev
 ```
 
 Open `http://localhost:3000` to access the application.
+
